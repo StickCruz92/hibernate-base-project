@@ -6,9 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.profesor.dao.ProfesorDaoImpl;
-import com.profesores.model.Curso;
-import com.profesores.model.Profesor;
+import com.profesor.dao.CatalogoProductoDaoImpl;
+import com.profesor.dao.CategoriaProductoDao;
+import com.profesores.model.CategoriaProducto;
 
 /**
  * Hello world!
@@ -30,18 +30,30 @@ public class App
         session.beginTransaction();
         session.save(profesor);
         session.getTransaction().commit();*/
-        
         //Profesor profesor = new Profesor("Mario", "Avatar1");
-        ProfesorDaoImpl profesorDaoImpl = new ProfesorDaoImpl();
+        //ProfesorDaoImpl profesorDaoImpl = new ProfesorDaoImpl();
         //profesorDaoImpl.saveProfesor(profesor);
-        
+        /*
         List<Profesor> profesores = profesorDaoImpl.findAllProfesor();
-        
         for (Profesor pro : profesores) {
 			System.out.println("Nombre: "+ pro.getNombre());
 		}
+        */
         
+        //Profesor profesor = new Profesor("Mario", "Avatar1");
+        //ProfesorDaoImpl profesorDaoImpl = new ProfesorDaoImpl();
+        //profesorDaoImpl.saveProfesor(profesor);
+        
+        //CategoriaProducto categoriaProducto = new CategoriaProducto("Pesando", 1);
+        CatalogoProductoDaoImpl catalogoProductoDaoImpl = new CatalogoProductoDaoImpl();
+        //catalogoProductoDaoImpl.saveCategoriaProducto(categoriaProducto);
+        
+        List<CategoriaProducto> categoriaProductos = catalogoProductoDaoImpl.findAllCategoriaProductos();
+		for (CategoriaProducto categoriaProducto2 : categoriaProductos) {
+			System.out.println("Objecto: "+ categoriaProducto2);
 
+		}
+		        
         
         
     }
